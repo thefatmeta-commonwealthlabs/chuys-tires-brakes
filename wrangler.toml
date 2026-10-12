@@ -1,0 +1,12 @@
+name = "chuys-tires-brakes"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "./"
+
+[[kv_namespaces]]
+binding = "QUOTE_CREDITS"
+id = "c4a7e891b234567890abcdef12345678"
+preview_id = "c4a7e891b234567890abcdef12345679"
+
+[vars]
+TREAD_AI_PRICING_API_BASE = "https://api.treadai.com/v1/pricing"
+TREAD_AI_COMPAT_API_BASE = "https://api.treadai.com/v1/compatibility"

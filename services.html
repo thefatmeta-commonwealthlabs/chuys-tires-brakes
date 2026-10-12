@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Chuy's Tires & Brake Service</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-950 text-gray-100 antialiased selection:bg-orange-500 selection:text-white">
+
+<!-- Top Urgency Banner -->
+<div class="bg-gradient-to-r from-red-600 via-orange-600 to-red-700 py-2.5 px-4 text-center text-xs sm:text-sm font-bold text-white tracking-wide shadow-md">
+  <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+    <span>🔥 LIMITED MOMENTUM OFFER: 15% OFF ALL TIRES & BRAKES WHEN YOU JOIN TODAY! CLOSES IN:</span>
+    <span class="countdown-timer-display font-black bg-black/40 px-2.5 py-0.5 rounded text-yellow-300 font-mono text-sm">14:45</span>
+    <a href="subscriptions.html" class="underline hover:text-yellow-200 transition ml-2">CLAIM NOW &rarr;</a>
+  </div>
+</div>
+
+<!-- Main Sticky Navigation -->
+<nav class="navbar-sticky">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3 text-decoration-none group">
+        <div class="w-12 h-12 rounded-lg bg-energy-gradient flex items-center justify-center shadow-lg shadow-orange-600/30 group-hover:scale-105 transition-transform">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" stroke-width="2.5" stroke-dasharray="4 2"></circle>
+            <circle cx="12" cy="12" r="3" stroke-width="2.5"></circle>
+            <path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke-width="2.5"></path>
+          </svg>
+        </div>
+        <div>
+          <div class="text-xl sm:text-2xl font-black tracking-wider text-white font-heading leading-none">
+            CHUY'S <span class="text-orange-500">TIRES & BRAKES</span>
+          </div>
+          <div class="text-[10px] tracking-widest text-gray-400 uppercase font-semibold mt-1">
+            PEAK PERFORMANCE AUTOMOTIVE • PASADENA & SGV
+          </div>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="font-bold text-sm tracking-wider uppercase transition text-gray-300 hover:text-orange-500">Home</a>
+        <a href="services.html" class="font-bold text-sm tracking-wider uppercase transition text-orange-500">Services</a>
+        <a href="about.html" class="font-bold text-sm tracking-wider uppercase transition text-gray-300 hover:text-orange-500">About Us</a>
+        <a href="subscriptions.html" class="font-bold text-sm tracking-wider uppercase transition text-gray-300 hover:text-orange-500">Memberships</a>
+      </div>
+
+      <div class="hidden lg:flex items-center gap-4">
+        <div class="text-right">
+          <div class="text-[11px] text-gray-400 font-bold uppercase tracking-wider">Available Credits</div>
+          <div class="user-credits-remaining text-xs font-black text-orange-400 bg-gray-900 px-2.5 py-1 rounded border border-gray-700">
+            1 Quote Credit (Free Tier)
+          </div>
+        </div>
+        <button onclick="QuoteEngine.openModal()" class="btn-massive-action text-xs py-2.5 px-4 shadow-orange-600/50">
+          Instant Quote
+        </button>
+      </div>
+
+      <div class="md:hidden flex items-center gap-2">
+        <button onclick="QuoteEngine.openModal()" class="btn-massive-action text-xs py-2 px-3">Quote</button>
+        <button id="mobile-menu-btn" class="p-2 text-gray-400 hover:text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-gray-950 border-b border-gray-800 px-4 pt-2 pb-6 space-y-3">
+    <a href="index.html" class="block font-bold text-sm uppercase py-2 text-gray-300">Home</a>
+    <a href="services.html" class="block font-bold text-sm uppercase py-2 text-orange-500">Services</a>
+    <a href="about.html" class="block font-bold text-sm uppercase py-2 text-gray-300">About Us</a>
+    <a href="subscriptions.html" class="block font-bold text-sm uppercase py-2 text-gray-300">Memberships</a>
+    <div class="pt-2 border-t border-gray-800">
+      <div class="user-credits-remaining text-xs text-orange-400 mb-3">1 Quote Credit (Free Tier)</div>
+      <button onclick="QuoteEngine.openModal()" class="w-full btn-massive-action text-xs py-3">Get Instant Quote Now</button>
+    </div>
+  </div>
+</nav>
+
+  <!-- HEADER -->
+  <section class="py-16 sm:py-20 bg-gray-900 border-b border-gray-800 text-center relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 relative z-10 space-y-4">
+      <span class="text-orange-500 text-xs font-black uppercase tracking-widest">Precision Automotive Craftsmanship</span>
+      <h1 class="text-4xl sm:text-6xl font-black text-white uppercase font-heading">
+        SURGICAL TIRES, BRAKES & ALIGNMENTS
+      </h1>
+      <p class="text-gray-300 text-base max-w-2xl mx-auto">
+        Every service is backed by our dual TreadAI™ digital tolerance checks and certified by ASE Master Technicians. Zero hesitation. Zero compromise.
+      </p>
+    </div>
+  </section>
+
+  <!-- DEEP SERVICE SECTIONS -->
+  <section class="py-20 bg-gray-950 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+      
+      <!-- Service 1: Tires -->
+      <div id="tires" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-4">
+          <span class="text-orange-500 text-xs font-black uppercase tracking-widest">Hunter Road-Force Elite Protocol</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white uppercase font-heading">
+            TIRE REPLACEMENT & ROAD-FORCE BALANCING
+          </h2>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Standard spin balancing only balances weight. Our Hunter Road Force Elite applies up to 1,250 lbs of simulated road pressure to measure tire and wheel radial runout. We match the tire's low spot to the wheel's high spot for zero vibration at 80 MPH.
+          </p>
+          <ul class="space-y-2 text-xs text-gray-300">
+            <li class="flex items-center gap-2"><span class="text-orange-500 font-bold">✓</span> Touring, Ultra-High Performance & Heavy Duty Light Truck</li>
+            <li class="flex items-center gap-2"><span class="text-orange-500 font-bold">✓</span> Full TPMS Diagnostic & Sensor Reset Included</li>
+            <li class="flex items-center gap-2"><span class="text-orange-500 font-bold">✓</span> Free Lifetime Rotation & Flat Repair for All Members</li>
+          </ul>
+          <div class="pt-2">
+            <button onclick="QuoteEngine.openModal('tires')" class="btn-massive-action text-xs py-3 px-6">
+              Quote 4 Tires Now &rarr;
+            </button>
+          </div>
+        </div>
+        <div class="lg:col-span-6 p-6 rounded-xl bg-gray-900 border border-gray-800 space-y-3">
+          <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Tire Brands In Stock Daily:</div>
+          <div class="grid grid-cols-2 gap-3 text-xs">
+            <div class="p-3 bg-gray-950 rounded border border-gray-800">
+              <strong class="text-white block">Michelin Pilot & Defender</strong>
+              <span class="text-gray-400">Class-leading stopping power</span>
+            </div>
+            <div class="p-3 bg-gray-950 rounded border border-gray-800">
+              <strong class="text-white block">Continental ExtremeGrip</strong>
+              <span class="text-gray-400">All-weather wet track confidence</span>
+            </div>
+            <div class="p-3 bg-gray-950 rounded border border-gray-800">
+              <strong class="text-white block">BFGoodrich KO2 & Trail</strong>
+              <span class="text-gray-400">Severe snow & rock rated</span>
+            </div>
+            <div class="p-3 bg-gray-950 rounded border border-gray-800">
+              <strong class="text-white block">RoadMaster & Cooper</strong>
+              <span class="text-gray-400">Maximum value high-mileage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2: Brakes -->
+      <div id="brakes" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 order-2 lg:order-1 p-6 rounded-xl bg-gray-900 border border-gray-800 space-y-4">
+          <h3 class="text-lg font-bold text-white font-heading">50-POINT BRAKE TOLERANCE PROTOCOL</h3>
+          <div class="space-y-3 text-xs text-gray-300">
+            <div class="flex justify-between border-b border-gray-800 pb-2">
+              <span>Ceramic Friction Compound Rating:</span>
+              <strong class="text-green-400">OEM+ Extreme Heat Dissipation</strong>
+            </div>
+            <div class="flex justify-between border-b border-gray-800 pb-2">
+              <span>Rotor Lateral Runout Limit:</span>
+              <strong class="text-green-400">&lt; 0.001 Inches Measured</strong>
+            </div>
+            <div class="flex justify-between border-b border-gray-800 pb-2">
+              <span>Hydraulic DOT 4 Boiling Point Test:</span>
+              <strong class="text-green-400">Passed Certified Minimum 446°F</strong>
+            </div>
+            <div class="flex justify-between">
+              <span>Caliper Slide Pin Lubrication:</span>
+              <strong class="text-green-400">Synthetic Polyurea High-Temp</strong>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-6 order-1 lg:order-2 space-y-4">
+          <span class="text-red-500 text-xs font-black uppercase tracking-widest">Unstoppable Stopping Power</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white uppercase font-heading">
+            CERAMIC BRAKE & ROTOR OVERHAULS
+          </h2>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Spongy brake pedals, grinding sounds, and steering wheel vibrations are warnings you cannot afford to ignore. We install premium ceramic pads that produce zero black brake dust and bite down with surgical authority.
+          </p>
+          <div class="p-3 rounded-lg bg-orange-950/20 border border-orange-500/30 text-xs text-orange-300 font-semibold">
+            ⚡ <strong>Peak Performer Member Perk:</strong> 10% Automatic Discount on all brake pads, rotors, and labor!
+          </div>
+          <div class="pt-2">
+            <button onclick="QuoteEngine.openModal('brakes')" class="btn-massive-action text-xs py-3 px-6">
+              Quote Brake Package Now &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3: Alignment -->
+      <div id="alignment" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-4">
+          <span class="text-yellow-500 text-xs font-black uppercase tracking-widest">HawkEye Elite 3D Laser System</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white uppercase font-heading">
+            SUB-MILLIMETER LASER 3D ALIGNMENT
+          </h2>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            A misaligned vehicle scrubs tire tread away in as little as 3,000 miles and reduces fuel economy by up to 10%. Our optical high-resolution camera towers calibrate your caster, camber, and toe angles to factory race tolerances in 15 minutes.
+          </p>
+          <div class="flex items-center gap-4 text-xs font-bold text-gray-300">
+            <div>✓ Instant Before/After Digital Printout</div>
+            <div>✓ Steering Angle Sensor (SAS) Reset</div>
+          </div>
+          <div class="pt-2">
+            <button onclick="QuoteEngine.openModal('package')" class="btn-massive-action text-xs py-3 px-6">
+              Bundle Alignment & Save &rarr;
+            </button>
+          </div>
+        </div>
+        <div class="lg:col-span-6 p-6 rounded-xl bg-gray-900 border border-gray-800">
+          <div class="text-center p-6 bg-gray-950 rounded border border-gray-800 space-y-3">
+            <div class="text-4xl font-black text-yellow-400 font-heading">0.02°</div>
+            <div class="text-xs uppercase font-bold text-gray-300">Target Steering Tolerance</div>
+            <p class="text-xs text-gray-400">
+              Eliminate drift, high-speed pull, and premature edge wear with our computerized laser rack.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<!-- Shared Footer -->
+<footer class="bg-gray-950 border-t border-gray-800 pt-16 pb-12 text-gray-400 text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div class="space-y-4">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded bg-orange-600 flex items-center justify-center font-black text-white">C</div>
+        <span class="text-xl font-black text-white font-heading">CHUY'S TIRES & BRAKES</span>
+      </div>
+      <p class="text-xs leading-relaxed text-gray-400">
+        Engineered with the relentless passion of Tony Robbins' peak performance philosophy. We believe vehicle safety is non-negotiable. Stop settling. Take massive action.
+      </p>
+      <div class="flex items-center gap-3 pt-2">
+        <span class="w-3 h-3 rounded-full bg-green-500 animate-ping"></span>
+        <span class="text-xs font-bold text-green-400">BAYS OPEN NOW • ZERO WAIT RESERVATIONS</span>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4 border-l-2 border-orange-500 pl-2">Services</h4>
+      <ul class="space-y-2 text-xs">
+        <li><a href="services.html#tires" class="hover:text-orange-400 transition">Road-Force Tire Mounting & Balance</a></li>
+        <li><a href="services.html#brakes" class="hover:text-orange-400 transition">Ceramic Brake & Rotor Overhauls</a></li>
+        <li><a href="services.html#alignment" class="hover:text-orange-400 transition">Laser 3D Precision Alignment</a></li>
+        <li><a href="services.html#tpms" class="hover:text-orange-400 transition">TPMS Sensor Calibration</a></li>
+        <li><a href="services.html#commercial" class="hover:text-orange-400 transition">Commercial Fleet Inspections</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4 border-l-2 border-orange-500 pl-2">Peak Protection</h4>
+      <ul class="space-y-2 text-xs">
+        <li><a href="subscriptions.html" class="hover:text-orange-400 transition">Free Diagnostic Tier</a></li>
+        <li><a href="subscriptions.html" class="hover:text-orange-400 transition">$35/mo Peak Performer (10% Off Brakes)</a></li>
+        <li><a href="subscriptions.html" class="hover:text-orange-400 transition">$50/mo Fleet Protection (5 Vehicles)</a></li>
+        <li><a href="about.html" class="hover:text-orange-400 transition">The Chuy Safety Guarantee</a></li>
+        <li><a href="subscriptions.html#faq" class="hover:text-orange-400 transition">TreadAI Quota & Pricing FAQ</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4 border-l-2 border-orange-500 pl-2">Immediate Dispatch</h4>
+      <p class="text-xs text-gray-300 font-bold mb-1">CHUY'S FLAGSHIP SERVICE CENTER</p>
+      <p class="text-xs text-gray-400 mb-3">1420 E Colorado Blvd, Pasadena, CA 91106</p>
+      <p class="text-xs font-bold text-white mb-1">Direct Hotline:</p>
+      <a href="tel:6265552489" class="text-lg font-black text-orange-400 hover:text-orange-300 block mb-3">(626) 555-CHUY (2489)</a>
+      <div class="text-[11px] text-gray-500">Mon - Sat: 7:00 AM - 7:00 PM | Sun: 8:00 AM - 4:00 PM</div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-gray-900 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+    <div>&copy; 2026 Chuy's Tires & Brake Service. All Rights Reserved. Powered by TreadAI™ APIs & Cloudflare Edge.</div>
+    <div class="flex gap-6">
+      <span class="hover:text-gray-400 cursor-pointer">Privacy Policy</span>
+      <span class="hover:text-gray-400 cursor-pointer">Terms of Service</span>
+      <span class="hover:text-gray-400 cursor-pointer">Fleet Terms</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal -->
+<div id="quote-modal" class="modal-overlay">
+  <div class="modal-container p-6 sm:p-8 relative">
+    <button onclick="QuoteEngine.closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold p-2 focus:outline-none">&times;</button>
+    <div id="modal-quote-form-container">
+      <div class="text-center mb-6">
+        <span class="bg-orange-600/20 text-orange-400 text-xs font-extrabold uppercase px-3 py-1 rounded-full border border-orange-500/30">
+          TreadAI™ Real-Time Engine
+        </span>
+        <h3 class="text-2xl font-black text-white mt-2 font-heading">LOCK IN YOUR INSTANT QUOTE</h3>
+        <p class="text-xs text-gray-400 mt-1 max-w-md mx-auto">
+          Combined live pricing & installation tolerances scanned in under 5 seconds. No games. No surprises.
+        </p>
+      </div>
+
+      <form id="modal-quote-form" onsubmit="QuoteEngine.submitQuote(event, 'modal-quote-form')" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Year</label>
+            <select name="year" required class="w-full bg-gray-900 border border-gray-700 rounded px-3 py-2 text-sm text-white focus:border-orange-500 focus:outline-none">
+              <option value="2025">2025</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022" selected>2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Make</label>
+            <input type="text" name="make" value="Toyota" required class="w-full bg-gray-900 border border-gray-700 rounded px-3 py-2 text-sm text-white focus:border-orange-500 focus:outline-none" placeholder="e.g. Ford, Toyota">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Model</label>
+            <input type="text" name="model" value="Tundra" required class="w-full bg-gray-900 border border-gray-700 rounded px-3 py-2 text-sm text-white focus:border-orange-500 focus:outline-none" placeholder="e.g. F-150, Camry">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Tire Size / Spec</label>
+            <input type="text" name="tire_size" value="275/65R18" required class="w-full bg-gray-900 border border-gray-700 rounded px-3 py-2 text-sm text-white focus:border-orange-500 focus:outline-none" placeholder="e.g. 225/65R17">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Service Priority</label>
+            <select id="modal-service-type" name="service_type" class="w-full bg-gray-900 border border-gray-700 rounded px-3 py-2 text-sm text-white focus:border-orange-500 focus:outline-none">
+              <option value="tires">4-Tire Replacement & Road-Force Balance</option>
+              <option value="brakes">Ceramic Brake & Rotor Overhaul</option>
+              <option value="package">Ultimate Safety Bundle (Tires + Brakes + Alignment)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Your Email (Quote Delivery & Credits)</label>
+          <input type="email" name="email" value="champion@massiveaction.com" required class="w-full bg-gray-900 border border-gray-700 rounded px-3 py-2 text-sm text-white focus:border-orange-500 focus:outline-none" placeholder="name@domain.com">
+          <span class="text-[10px] text-gray-500">Free Tier includes 1 monthly quote. Subscribed members get up to 4+ quotes and 10% off brakes.</span>
+        </div>
+
+        <button type="submit" class="w-full btn-massive-action text-sm py-3 mt-4">
+          ⚡ UNLEASH TREADAI QUOTE NOW (SUB-5 SECONDS)
+        </button>
+      </form>
+    </div>
+
+    <div id="modal-quote-loading-container" class="hidden text-center py-10 space-y-6">
+      <div class="w-20 h-20 mx-auto rounded-full bg-energy-gradient flex items-center justify-center animate-spin">
+        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" stroke-width="3" stroke-dasharray="8 6"></circle>
+        </svg>
+      </div>
+      <div>
+        <h4 class="text-xl font-black text-white font-heading">HOLD YOUR FOCUS! RUNNING TREADAI ENGINES...</h4>
+        <p id="quote-loading-status" class="text-sm text-orange-400 font-semibold mt-2 min-h-[24px]">
+          Connecting to TreadAI National Warehouse Inventory...
+        </p>
+      </div>
+      <div class="w-full bg-gray-900 h-3 rounded-full overflow-hidden border border-gray-700 max-w-md mx-auto">
+        <div id="quote-progress-bar" class="progress-bar-inner w-0"></div>
+      </div>
+      <p class="text-xs text-gray-500 italic">"Decision is the ultimate power. Certainty is on its way."</p>
+    </div>
+
+    <div id="modal-quote-results-container" class="hidden">
+      <div class="text-center mb-4">
+        <span class="bg-green-600/20 text-green-400 text-xs font-bold uppercase px-3 py-1 rounded-full border border-green-500/30">
+          ✓ Certified Fitment & Guaranteed Price
+        </span>
+        <h3 class="text-xl font-black text-white mt-2 font-heading">YOUR LIVE TREADAI OPTIONS</h3>
+      </div>
+      <div id="quote-results-content"></div>
+      <div class="mt-4 flex gap-3">
+        <button onclick="QuoteEngine.closeModal()" class="w-full btn-secondary-action text-xs py-2">Close & Continue Browsing</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="js/quote-engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
